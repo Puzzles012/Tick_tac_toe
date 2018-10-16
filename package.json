@@ -1,0 +1,22 @@
+{
+  "name": "tick_tac_toe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Puzzles012/Tick_tac_toe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Puzzles012/Tick_tac_toe/issues"
+  },
+  "homepage": "https://github.com/Puzzles012/Tick_tac_toe#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
