@@ -1,4 +1,4 @@
 function game(player){
-    return "";
+    return "it's " + player + " turn";
 }
 module.exports = game;
