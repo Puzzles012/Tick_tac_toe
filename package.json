@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build" : "webpack",
     "test": "jest",
+    "heroku-postbuild" : "weboack -p",
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
     "start": "node app"
