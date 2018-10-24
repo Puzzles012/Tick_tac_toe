@@ -1,23 +1,37 @@
-function game(player){
-    return "it's " + player + " turn";
+const board = exports.initializeBoard();
+
+exports.game = function game(player){
+	return "it's " + player + " turn";
 }
 
-function initializeBoard(){
-	var array = null;
+exports.initializeBoard = function initializeBoard(){
+	var array = [];
 
+	/*
+	the default value for each square is 0, if 
+	player 1 or 2 pick the square the value turns 
+	to 1 or 2, respectively
+	 */
 	for(var i = 0; i < 9; i++){
-		array[i] = false;
+		array[i] = 0;
 	} 
 
 	return array;
 }
 
-function displayBoard(array){
+exports.displayBoard = function displayBoard(){
+	//prints the board to console.
 	for(var i = 0; i < array.length; i++){
-		console.log(array[i]);
+		if(i % 3 == 0){
+			console.log();
+			process.stdout.write(array[i] + " ");
+		}
+		else{
+			process.stdout.write(array[i] + " ");
+		}
 	}
+
+	console.log("\n");
 }
 
-//module.exports = game;
-
-displayBoard(initializeBoard());
+exports.displayBoard();
