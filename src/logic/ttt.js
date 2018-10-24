@@ -19,7 +19,7 @@ exports.initializeBoard = function initializeBoard(){
 	return array;
 }
 
-exports.displayBoard = function displayBoard(){
+exports.displayBoard = function displayBoard(array){
 	//prints the board to console.
 	for(var i = 0; i < array.length; i++){
 		if(i % 3 == 0){
@@ -34,4 +34,4 @@ exports.displayBoard = function displayBoard(){
 	console.log("\n");
 }
 
-exports.displayBoard();
+exports.displayBoard(exports.initializeBoard());
