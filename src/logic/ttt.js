@@ -1,4 +1,9 @@
 function playerTurn(player){
-    return "it's " + player + " turn";
+    if(player == "x" || player == "o"){
+        return "it's " + player + " turn";
+    }
+    else{
+        return "x and o only";
+    }
 }
 module.exports = playerTurn;
