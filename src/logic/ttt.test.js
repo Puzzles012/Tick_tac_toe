@@ -1,9 +1,21 @@
-const game = require("./ttt");
-describe('displayBoard', function() {
-    var  
-    expect(displayBoard(
+//const game = require("./ttt");
+const tic = require("./ttt.js");
 
-}
-it("", () =>{
-	expect(game("x")).toBe("it's x turn");
+/*
+describe('Player Turn Testing', function() {
+	
 });
+
+describe('Board Testing', function() {
+	
+});
+*/
+
+test("game()", () => {
+	expect(tic.game("x")).toBe("it's x turn");
+});
+
+test("initializeBoard()", () => {
+	expect(tic.initializeBoard()).toEqual([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+});
+
