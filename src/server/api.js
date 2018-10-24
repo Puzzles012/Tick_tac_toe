@@ -9,9 +9,7 @@ app.get("/ttt/:player", (req, res) => {
     res.status(200);
  
    
-    
-    
-    
+   
 });
 
 module.exports = app;
