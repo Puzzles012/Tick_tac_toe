@@ -1,4 +1,4 @@
-function game(player){
+function playerTurn(player){
     return "it's " + player + " turn";
 }
-module.exports = game;
+module.exports = playerTurn;
