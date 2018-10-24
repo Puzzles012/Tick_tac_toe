@@ -70,6 +70,7 @@
     "yallist": "3.0.2"
   },
   "dependencies": {
+    "assert": "^1.4.1",
     "express": "^4.16.4"
   }
 }
