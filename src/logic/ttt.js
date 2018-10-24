@@ -1,4 +1,4 @@
-const board = exports.initializeBoard();
+//const board = exports.initializeBoard();
 
 exports.game = function game(player){
 	return "it's " + player + " turn";
