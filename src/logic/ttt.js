@@ -18,6 +18,6 @@ function displayBoard(array){
 	}
 }
 
-module.exports = game;
+//module.exports = game;
 
-displayBoard(initializeBoard);
+displayBoard(initializeBoard());
