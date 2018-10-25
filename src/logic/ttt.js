@@ -1,15 +1,16 @@
 exports.playerTurn = function playerTurn(curPlayer){
-	if(curPlayer != "x" && curPlayer != "o"){
-		return "x and o only"
+	if((curPlayer != "X" && curPlayer != "O") && (curPlayer != "x" && curPlayer != "o")){
+		return "X and O only"
 	}
-	if(curPlayer == "x"){
-        curPlayer = "o";
+	if(curPlayer == "X"){
+        curPlayer = "O";
     }
     else{
-        curPlayer = "x"
+        curPlayer = "X"
     }
-    return "it's " + curPlayer + " turn";;
+    return curPlayer;
 }
+
 exports.initializeBoard = function initializeBoard(){
 	var array = [];
 
@@ -39,13 +40,13 @@ exports.displayBoard = function displayBoard(){
 	console.log("\n");
 }
 
-exports.pickSquare = function pickSquare(squareNumber, playerNumber){
+exports.pickSquare = function pickSquare(squareNumber, player){
 	if(board[squareNumber - 1] == '.'){
-		if(playerNumber == 1){
+		if(player == 'X'){
 			board[squareNumber - 1] = 'X';
 		}
 
-		if(playerNumber == 2){
+		if(player == 'O'){
 			board[squareNumber - 1] = 'O';
 		}
 	}
@@ -78,8 +79,40 @@ exports.checkWinner = function checkWinner(){
 	return null;
 }
 
+function gameLoop(){
+	var gameOver = false;
+	var turnCount = 0;
+	var playerTurn = 'X';
+	//var playerNumber = 1;
+
+	while(!gameOver){
+		exports.displayBoard();
+		console.log("it's " + playerTurn + "'s turn!");
+
+		var input = readline();
+
+		exports.pickSquare(input, playerTurn);
+
+		if(exports.checkWinner() != null){
+			gameOver = true;
+			console.log(exports.checkWinner() + " is the winner!");
+		}
+
+		if(exports.checkWinner() == null && turnCount == 9){
+			gameOver = true;
+			console.log("DRAW!");
+		}
+
+		playerTurn = exports.playerTurn(playerTurn);
+		turnCount++;
+	}
+}
+
 const board = exports.initializeBoard();
+const readline = require('readline');
 const maxTurns = 9;
+
+gameLoop();
 /*
 exports.playerTurn();
 
