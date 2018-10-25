@@ -12,7 +12,7 @@ app.get("/ttt/:player", (req, res) => {
 });
 
 app.get("/dist/index", (req, res) => {
-	var whatever = await page.goto("/dist/index");
+	var whatever = await page.goto("/dist/index.html");
 	res.send(whatever);
 	res.status(200);
 })
