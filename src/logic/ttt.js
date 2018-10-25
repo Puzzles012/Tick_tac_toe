@@ -53,6 +53,32 @@ exports.pickSquare = function pickSquare(squareNumber, playerNumber){
 	return board;
 }
 
+exports.checkWinner = function checkWinner(){
+	var winner = null;
+
+	for(var i = 0; i < 3; i++){
+		if(board[i] == board[3 + i] && board[i] == board[6 + i] && board[i] != '.'){
+			winner = board[i];
+		}
+	}
+
+	for(var i = 0; i < 7; i += 3){
+		if(board[i] == board[i + 1] && board[i] == board[i + 2] && board != '.'){
+			winner = board[i];
+		}
+	}
+
+	if(board[0] == board[4] && board[0] == board[8] && board[0] != '.'){
+		winner = board[0];
+	}
+
+	if(board[2] == board[4] && board[2] == board[6] && board[2] != '.'){
+		winner = board[2];
+	}
+
+	return winner;
+}
+
 const board = exports.initializeBoard();
 <<<<<<< HEAD
 
@@ -62,9 +88,16 @@ const board = exports.initializeBoard();
 exports.playerTurn();
 
 exports.displayBoard();
-exports.pickSquare(1, 1);
+exports.pickSquare(3, 2);
+exports.pickSquare(5, 2);
+exports.pickSquare(7, 2);
 exports.displayBoard();
-exports.pickSquare(2, 2);
 exports.displayBoard();
+<<<<<<< HEAD
 */
 >>>>>>> ba33ea0baaaae7b09ce111b329d489ff0e81aad3
+=======
+
+console.log(exports.checkWinner());*/
+
+>>>>>>> acb84902c265126e2b80088064c47eadc161378f
