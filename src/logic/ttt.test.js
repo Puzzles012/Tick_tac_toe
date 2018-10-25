@@ -2,6 +2,7 @@ const turn = require("./ttt.js");
 
 test("should switch player", () =>{
 	expect(turn.playerTurn("x")).toBe("it's o turn");
+	
 });
 test("should return error if it's other than x or o", () =>{
 	expect(turn.playerTurn("b")).toBe("x and o only");

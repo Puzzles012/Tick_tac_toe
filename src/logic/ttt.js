@@ -3,10 +3,10 @@ exports.playerTurn = function playerTurn(curPlayer){
 		return "x and o only"
 	}
 	if(curPlayer == "x"){
-        curPlayer == "o";
+        curPlayer = "o";
     }
     else{
-        curPlayer == "x"
+        curPlayer = "x"
     }
     return "it's " + curPlayer + " turn";;
 }
