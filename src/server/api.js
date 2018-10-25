@@ -12,6 +12,7 @@ app.get("/ttt/:player", (req, res) => {
 
 app.get("/dist/index", (req, res) => {
 	res.send(index);
+	res.status(200);
 })
 
 module.exports = app;
