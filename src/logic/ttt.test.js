@@ -1,5 +1,5 @@
-const game = require("./ttt");
+const turn = require("./ttt");
 
 it("", () =>{
-	expect(game("x")).toBe("it's x turn");
-	});
+	expect(turn("x")).toBe("it's o turn");
+});
