@@ -1,23 +1,23 @@
 function icon(ID)
 	{
-		if (game.currPlayer == 'user')
+		if (game.curPlayer == 'playerX')
 		{
-			$('#' ID).html(game.user);
+			$('#' ID).html(game.playerX);
 			$('#' ID).removeAttr('onClick')
 			gameStatus();
-			setCurrPlayer('computer');
+			setCurPlayer('playerO');
 		}
-		else if (game.currPlayer == 'computer')
+		else if (game.curPlayer == 'playerO')
 		{
-			$('#' ID).html(game.computer);
+			$('#' ID).html(game.playerO);
 			$('#' ID).removeAttr('onClick')
 			gameStatus();
-			setCurrPlayer('user');
+			setCurPlayer('playerX');
 		}
 		game.move;
 		draw();
 		
-		if(game.currPlayer == 'computer')
+		if(game.curPlayer == 'playerO')
 		{
 			comp();
 		}
