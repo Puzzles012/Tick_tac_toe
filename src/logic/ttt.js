@@ -63,7 +63,7 @@ exports.checkWinner = function checkWinner(){
 	}
 
 	for(var i = 0; i < 7; i += 3){
-		if(board[i] == board[i + 1] && board[i] == board[i + 2] && board != '.'){
+		if(board[i] == board[i + 1] && board[i] == board[i + 2] && board[i] != '.'){
 			winner = board[i];
 		}
 	}
@@ -80,6 +80,7 @@ exports.checkWinner = function checkWinner(){
 }
 
 const board = exports.initializeBoard();
+const maxTurns = 9;
 /*
 exports.playerTurn();
 
