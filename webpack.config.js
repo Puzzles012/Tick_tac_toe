@@ -6,13 +6,7 @@ module.exports = {
     
     mode: 'development',
     
-    devServer: {    
-        port: 3000,    
-        open: true,    
-        proxy: {      
-            "/api": "http://localhost:8080"    
-        }
-    },
+    
      entry: './src/client/index.js',  
     output: {    
         filename: 'main.js',    
@@ -20,12 +14,19 @@ module.exports = {
     },
     plugins: [    
         new HtmlWebpackPlugin({        
-            title: 'Tic tac toe',
-            filename: 'index.html'   
+            filename: 'index.html',
+            inject: true,
+            title: 'Tic tac toe'
         }),
         new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
-    ]
-   
+    ],
+   devServer: {    
+        port: 3000,    
+        open: true,    
+        proxy: {      
+            "/api": "http://localhost:8080"    
+        }
+    },
     
     
 };
