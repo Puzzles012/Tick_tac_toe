@@ -13,16 +13,19 @@ module.exports = {
             "/api": "http://localhost:8080"    
         }
     },
-    plugins: [    
-        new HtmlWebpackPlugin({        
-            title: 'Greeting page'    
-        }),
-        new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
-    ],
-    entry: './src/client/index.js',  
+     entry: './src/client/index.js',  
     output: {    
         filename: 'main.js',    
         path: path.resolve(__dirname, 'dist')
-    }
+    },
+    plugins: [    
+        new HtmlWebpackPlugin({        
+            title: 'Tic tac toe',
+            filename: 'index.html'   
+        }),
+        new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
+    ]
+   
+    
     
 };
