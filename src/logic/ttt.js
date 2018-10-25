@@ -46,15 +46,38 @@ exports.pickSquare = function pickSquare(squareNumber, playerNumber){
 }
 
 exports.checkWinner = function checkWinner(){
+	for(var i = 0; i < 3; i++){
+		if(board[i] == board[3 + i] && board[i] == board[6 + i] && board[i] != '.'){
+			return board[i];
+		}
+	}
 
+	for(var i = 0; i < 7; i *= 3){
+		if(board[i] == board[i + 1] && board[i] == board[i + 2]){
+			return board[i];
+		}
+	}
+
+	if(board[0] == board[4] && board[0] == board[8] && board[0] != '.'){
+		return board[0];
+	}
+
+	if(board[2] == board[4] && board[2] == board[6] && board[2] != '.'){
+		return board[2];
+	}
+
+	return null;
 }
 
 const board = exports.initializeBoard();
 
-
 exports.displayBoard();
 exports.pickSquare(1, 1);
+exports.pickSquare(5, 1);
+exports.pickSquare(9, 1);
+exports.pickSquare(3, 2);
 exports.displayBoard();
-exports.pickSquare(2, 2);
+//exports.pickSquare(2, 2);
 exports.displayBoard();
+console.log(exports.checkWinner());
 
