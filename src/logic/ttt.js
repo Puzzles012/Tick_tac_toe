@@ -101,7 +101,7 @@ function gameLoop(){
 		exports.displayBoard();
 		//console.log("it's " + playerTurn + "'s turn!");
 
-		var input = readline();
+		//var input = readline();
 
 		//var input = readStdInput();
 
@@ -119,7 +119,6 @@ function gameLoop(){
 			gameOver = true;
 			return winner;
 		}
-
 		playerTurn = exports.playerTurn(playerTurn);
 		turnCount++;
 	}
