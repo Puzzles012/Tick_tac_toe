@@ -1,7 +1,15 @@
-exports.game = function game(player){
-	return "it's " + player + " turn";
+exports.playerTurn = function playerTurn(curPlayer){
+	if(curPlayer != "x" && curPlayer != "o"){
+		return "x and o only"
+	}
+	if(curPlayer == "x"){
+        curPlayer = "o";
+    }
+    else{
+        curPlayer = "x"
+    }
+    return "it's " + curPlayer + " turn";;
 }
-
 exports.initializeBoard = function initializeBoard(){
 	var array = [];
 
@@ -73,6 +81,8 @@ exports.checkWinner = function checkWinner(){
 
 const board = exports.initializeBoard();
 /*
+exports.playerTurn();
+
 exports.displayBoard();
 exports.pickSquare(3, 2);
 exports.pickSquare(5, 2);
