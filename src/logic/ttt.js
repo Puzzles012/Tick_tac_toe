@@ -1,13 +1,15 @@
-exports.game = function game(player){
-    if(player != "x" && player != "o")
-    {
-        return "Wrong input";
+exports.playerTurn = function playerTurn(curPlayer){
+	if(curPlayer != "x" && curPlayer != "o"){
+		return "x and o only"
+	}
+	if(curPlayer == "x"){
+        curPlayer = "o";
     }
-    
-    return "it's " + player + " turn";
-
+    else{
+        curPlayer = "x"
+    }
+    return "it's " + curPlayer + " turn";;
 }
-
 exports.initializeBoard = function initializeBoard(){
 	var array = [];
 
@@ -52,5 +54,17 @@ exports.pickSquare = function pickSquare(squareNumber, playerNumber){
 }
 
 const board = exports.initializeBoard();
+<<<<<<< HEAD
 
 
+=======
+/*
+exports.playerTurn();
+
+exports.displayBoard();
+exports.pickSquare(1, 1);
+exports.displayBoard();
+exports.pickSquare(2, 2);
+exports.displayBoard();
+*/
+>>>>>>> ba33ea0baaaae7b09ce111b329d489ff0e81aad3
