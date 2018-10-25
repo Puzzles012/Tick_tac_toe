@@ -45,12 +45,16 @@ exports.pickSquare = function pickSquare(squareNumber, playerNumber){
 	return board;
 }
 
+exports.checkWinner = function checkWinner(){
+
+}
+
 const board = exports.initializeBoard();
 
-/*
+
 exports.displayBoard();
 exports.pickSquare(1, 1);
 exports.displayBoard();
 exports.pickSquare(2, 2);
 exports.displayBoard();
-*/
+
