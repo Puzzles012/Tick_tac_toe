@@ -1,5 +1,11 @@
 exports.game = function game(player){
-	return "it's " + player + " turn";
+    if(player != "x" && player != "o")
+    {
+        return "Wrong input";
+    }
+    
+    return "it's " + player + " turn";
+
 }
 
 exports.initializeBoard = function initializeBoard(){
@@ -47,10 +53,4 @@ exports.pickSquare = function pickSquare(squareNumber, playerNumber){
 
 const board = exports.initializeBoard();
 
-/*
-exports.displayBoard();
-exports.pickSquare(1, 1);
-exports.displayBoard();
-exports.pickSquare(2, 2);
-exports.displayBoard();
-*/
+
