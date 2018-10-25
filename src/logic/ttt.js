@@ -126,7 +126,7 @@ function gameLoop(){
 }
 
 const board = exports.initializeBoard();
-const readline = require('readline');
+//const readline = require('readline');
 const maxTurns = 9;
 
 var playerXScore = 0;
@@ -136,7 +136,6 @@ var playAgain = true;
 
 while(playAgain){
 	var winner = gameLoop();
-
 
 	if(winner == 'X'){
 		playerXScore++;
