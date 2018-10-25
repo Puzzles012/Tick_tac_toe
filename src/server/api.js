@@ -4,7 +4,8 @@ const app = express();
 const game = require("../logic/ttt");
 const index = require("../dist/index");
 
-app.get("/ttt/:player", (req, res) => {  
+app.get("/ttt/index", (req, res) => {  
+    //var player = game.playerTurn(req.params.player);
    
     res.send(index);
     res.status(200); 

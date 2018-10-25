@@ -11,6 +11,6 @@ describe("GET /tic tac toe/:player endpoint", () => {
     });
 
     it("should display index", async () => {
-    	const res = await request(api).get("/dist/index");
+    	const res = await request(api).get("/ttt/index");
     });
 });
