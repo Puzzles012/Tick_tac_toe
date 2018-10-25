@@ -1,16 +1,65 @@
-function playerTurn(curPlayer){
-    if(curPlayer == "x"){
+exports.playerTurn = function playerTurn(curPlayer){
+	if(curPlayer != "x" && curPlayer != "o"){
+		return "x and o only"
+	}
+	if(curPlayer == "x"){
         curPlayer == "o";
     }
-    else if(curPlayer == "o"){
+    else{
         curPlayer == "x"
     }
-    return curPlayer;
+    return "it's " + curPlayer + " turn";;
 }
-function turn(player){
-    playerTurn(player);
-    var stat = "it's " + player + " turn";
+exports.initializeBoard = function initializeBoard(){
+	var array = [];
 
-    return stat;
+	/*
+	the default value for each square is ., if 
+	player 1 or 2 pick the square the value turns 
+	to X or O, respectively
+	 */
+	for(var i = 0; i < 9; i++){
+		array[i] = '.';
+	} 
+
+	return array;
 }
-module.exports = turn;
+
+exports.displayBoard = function displayBoard(){
+	//prints the board to console.
+	for(var i = 0; i < board.length; i++){
+		if(i % 3 == 0){
+			console.log();
+			process.stdout.write(board[i] + " ");
+		}else{
+			process.stdout.write(board[i] + " ");
+		}
+	}
+
+	console.log("\n");
+}
+
+exports.pickSquare = function pickSquare(squareNumber, playerNumber){
+	if(board[squareNumber - 1] == '.'){
+		if(playerNumber == 1){
+			board[squareNumber - 1] = 'X';
+		}
+
+		if(playerNumber == 2){
+			board[squareNumber - 1] = 'O';
+		}
+	}
+
+	return board;
+}
+
+const board = exports.initializeBoard();
+/*
+exports.playerTurn();
+
+exports.displayBoard();
+exports.pickSquare(1, 1);
+exports.displayBoard();
+exports.pickSquare(2, 2);
+exports.displayBoard();
+*/
