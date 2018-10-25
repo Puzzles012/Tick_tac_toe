@@ -33,7 +33,6 @@ test("pickSquare() turn 2", () => {
 
 test("pickSquare() turn 3", () => {
 	expect(turn.pickSquare(3, 2)).toEqual(['X', 'O', 'O', '.', '.', '.', '.', '.', '.']);
-<<<<<<< HEAD
 });
 test("checkWinner() turn 1", () => { 
 	turn.pickSquare(3, 2);
@@ -46,6 +45,4 @@ test("checkWinner() turn 2", () => {
 test("checkWinner() turn 3", () => { 
 	turn.pickSquare(7, 2);
 	expect(turn.checkWinner()).toEqual('O');
-=======
->>>>>>> acb84902c265126e2b80088064c47eadc161378f
 });

@@ -80,6 +80,7 @@ exports.checkWinner = function checkWinner(){
 }
 
 const board = exports.initializeBoard();
+const maxTurns = 9;
 /*
 exports.playerTurn();
 
