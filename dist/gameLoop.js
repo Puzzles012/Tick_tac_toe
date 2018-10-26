@@ -1,6 +1,4 @@
-console.log("Hello World");
-
-const Loop = require("../../src/logic/ttt.js")
+const Loop = require("src/logic/ttt.js")
 
 function gameLoop(){
 	var gameOver = false;
@@ -25,7 +23,7 @@ function gameLoop(){
 			gameOver = true;
 			return winner;
 		}
-		playerTurn = Loop.playerTurn(playerTurn);
+		playerTurn = exports.playerTurn(playerTurn);
 		turnCount++;
 	}
 }
@@ -36,6 +34,8 @@ var playerXScore = 0;
 var playerOScore = 0;
 var playAgain = true;
 
+
+while(playAgain){
 	var winner = gameLoop();
 
 	if(winner == 'X'){
@@ -46,6 +46,6 @@ var playAgain = true;
 		playerOScore++;
 	}
 
-
-
-
+	//TODO: play again?
+	playAgain = false;
+}
