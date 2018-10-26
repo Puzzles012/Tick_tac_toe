@@ -2,7 +2,6 @@
 const express = require("express");
 const app = express();
 const game = require("../logic/ttt");
-const index = require("../../dist/index")
 app.get("/ttt/:player", (req, res) => {  
     var player = game.playerTurn(req.params.player);
    
@@ -11,7 +10,8 @@ app.get("/ttt/:player", (req, res) => {
 });
 
 app.get("/dist/index", (req, res) => {
-	res.send(index);
+    var svar = game(req.params.player);
+	res.send({svar});
 	res.status(200);
 })
 
