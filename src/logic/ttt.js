@@ -148,15 +148,11 @@ while(playAgain){
 	playAgain = false;
 }
 
-/*
-exports.playerTurn();
 
-exports.displayBoard();
-exports.pickSquare(3, 2);
-exports.pickSquare(5, 2);
-exports.pickSquare(7, 2);
-exports.displayBoard();
-exports.displayBoard();
 
-console.log(exports.checkWinner());*/
-
+module.exports.displayBoard();
+module.exports.pickSquare(3, 2);
+module.exports.pickSquare(5, 2);
+module.exports.pickSquare(7, 2);
+module.exports.displayBoard();
+module.exports.displayBoard();
