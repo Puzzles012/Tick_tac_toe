@@ -1,15 +1,16 @@
 exports.playerTurn = function playerTurn(curPlayer){
-	if(curPlayer != "x" && curPlayer != "o"){
-		return "x and o only"
+	if((curPlayer != "X" && curPlayer != "O") && (curPlayer != "x" && curPlayer != "o")){
+		return "X and O only"
 	}
-	if(curPlayer == "x"){
-        curPlayer = "o";
+	if(curPlayer == "X"){
+        curPlayer = "O";
     }
     else{
-        curPlayer = "x"
+        curPlayer = "X"
     }
-    return "it's " + curPlayer + " turn";;
+    return curPlayer;
 }
+
 exports.initializeBoard = function initializeBoard(){
 	var array = [];
 
@@ -39,13 +40,13 @@ exports.displayBoard = function displayBoard(){
 	console.log("\n");
 }
 
-exports.pickSquare = function pickSquare(squareNumber, playerNumber){
+exports.pickSquare = function pickSquare(squareNumber, player){
 	if(board[squareNumber - 1] == '.'){
-		if(playerNumber == 1){
+		if(player == 'X'){
 			board[squareNumber - 1] = 'X';
 		}
 
-		if(playerNumber == 2){
+		if(player == 'O'){
 			board[squareNumber - 1] = 'O';
 		}
 	}
@@ -63,7 +64,7 @@ exports.checkWinner = function checkWinner(){
 	}
 
 	for(var i = 0; i < 7; i += 3){
-		if(board[i] == board[i + 1] && board[i] == board[i + 2] && board != '.'){
+		if(board[i] == board[i + 1] && board[i] == board[i + 2] && board[i] != '.'){
 			winner = board[i];
 		}
 	}
@@ -79,25 +80,79 @@ exports.checkWinner = function checkWinner(){
 	return winner;
 }
 
+function readStdInput(){
+	var input = readline.createInterface({
+		input: process.stdin,
+		output: process.stdout
+	});
+
+	return input.question("bleh", function(answer){
+		input.close();
+	});
+}
+
+function gameLoop(){
+	var gameOver = false;
+	var turnCount = 0;
+	var playerTurn = 'X';
+	var winner = null;
+
+	while(!gameOver){
+		exports.displayBoard();
+		//console.log("it's " + playerTurn + "'s turn!");
+
+		//var input = readline();
+
+		//var input = readStdInput();
+
+		exports.pickSquare(1, playerTurn);
+
+		if(exports.checkWinner() != null){
+			gameOver = true;
+			winner = exports.checkWinner();
+			console.log(winner + " is the winner!");
+			return winner;
+		}
+
+		if(exports.checkWinner() == null && turnCount == 9){
+			console.log("DRAW!");
+			gameOver = true;
+			return winner;
+		}
+		playerTurn = exports.playerTurn(playerTurn);
+		turnCount++;
+	}
+}
+
 const board = exports.initializeBoard();
-<<<<<<< HEAD
 
 
-=======
-/*
-exports.playerTurn();
 
-exports.displayBoard();
-exports.pickSquare(3, 2);
-exports.pickSquare(5, 2);
-exports.pickSquare(7, 2);
-exports.displayBoard();
-exports.displayBoard();
-<<<<<<< HEAD
-*/
->>>>>>> ba33ea0baaaae7b09ce111b329d489ff0e81aad3
-=======
+//const readline = require('readline');
+const maxTurns = 9;
 
-console.log(exports.checkWinner());*/
+var playerXScore = 0;
+var playerOScore = 0;
+var playAgain = true;
 
->>>>>>> acb84902c265126e2b80088064c47eadc161378f
+
+while(playAgain){
+	var winner = gameLoop();
+
+	if(winner == 'X'){
+		playerXScore++;
+	}
+
+	else if(winner == 'O'){
+		playerOScore++;
+	}
+
+	//TODO: play again?
+	playAgain = false;
+}
+
+
+
+console.log(exports.checkWinner());
+
+
