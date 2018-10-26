@@ -9,8 +9,7 @@
     "heroku-postbuild" : "weboack -p",
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
-    "start": "node app",
-    "build": "webpack"
+    "start": "node app"
   },
   "repository": {
     "type": "git",
