@@ -22,7 +22,9 @@ running a Web App).
 5. The build script has deploy/install target that deploys the executable outside of the working
 directory (console app) or on external server (web app).
 6. The business logic should be coded using Test Driven Development.
-7. The code should be loosely coupled and follow good object oriented design practices.
+
+[/] 7. The code should be loosely coupled and follow good object oriented design practices.
+
 8. Documentation uses Markdown syntax.
 9. Use Automated Continuous Integration Server.
 
