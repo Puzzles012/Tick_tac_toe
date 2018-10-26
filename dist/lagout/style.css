@@ -1,0 +1,64 @@
+html,
+body{
+    height:100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: pink;
+}
+
+.flex-container{
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-weap{
+    flex-wrap: wrap;
+}
+
+.flex-center{
+    justify-content:center;
+    align-items: center;
+}
+
+.title{
+    font-size: 42px;
+    color: #000;
+}
+
+.board-container{
+    height: 100%;
+    width: 100%;
+}
+
+.board{
+    width: 600px;
+}
+
+.square{
+    width: 200px;
+    height: 200px;
+    border: 3px solid purple;
+    font-size: 50px;
+}
+
+.square.hover{
+    background-color: peachpuff;
+    cursor: pointer;
+}
+
+.winner{
+    display: none;
+    padding: 12px;
+    font-size: 30px;
+    color: blueviolet;
+}
+
+.reset{
+    padding: 5px;
+    margin: 5px;
+}
+
+
+
