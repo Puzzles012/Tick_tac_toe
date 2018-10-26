@@ -24,9 +24,9 @@ exports.displayBoard = function displayBoard(){
 	for(var i = 0; i < board.length; i++){
 		if(i % 3 == 0){
 			console.log();
-			process.stdout.write(board[i] + " ");
+			document.write(board[i] + " ");
 		}else{
-			process.stdout.write(board[i] + " ");
+			document.write(board[i] + " ");
 		}
 	}
 
@@ -87,10 +87,6 @@ function readStdInput(){
 
 const board = exports.initializeBoard();
 
-
-
-
-
-console.log(exports.checkWinner());
+const maxTurns = 9;
 
 
