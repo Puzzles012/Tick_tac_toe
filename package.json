@@ -4,13 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build" : "webpack",
+    "build": "webpack",
     "test": "jest",
-    "heroku-postbuild" : "weboack -p",
+    "heroku-postbuild": "weboack -p",
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
-    "start": "node app",
-    "build": "webpack"
+    "start": "node app"
   },
   "repository": {
     "type": "git",
@@ -81,6 +80,7 @@
     "bootstrap": "^3.3.7",
     "express": "^4.16.4",
     "extract-loader": "^3.0.0",
+    "jquery": "^3.3.1",
     "lodash": "^4.17.11"
   }
 }
