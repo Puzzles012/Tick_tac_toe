@@ -13,12 +13,11 @@ exports.playerTurn = function playerTurn(curPlayer){
 
 exports.initializeBoard = function initializeBoard(){
 	var array = [];
-
 	/*
 	the default value for each square is ., if 
 	player 1 or 2 pick the square the value turns 
 	to X or O, respectively
-	 */
+	*/
 	for(var i = 0; i < 9; i++){
 		array[i] = '.';
 	} 
@@ -125,8 +124,6 @@ function gameLoop(){
 }
 
 const board = exports.initializeBoard();
-
-
 
 //const readline = require('readline');
 const maxTurns = 9;

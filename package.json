@@ -76,6 +76,7 @@
     "yallist": "3.0.2"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^4.16.4",
     "lodash": "^4.17.11"
   }

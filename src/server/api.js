@@ -7,9 +7,6 @@ app.get("/ttt/:player", (req, res) => {
    
     res.send({game: player});
     res.status(200);
- 
-   
-   
 });
 
 module.exports = app;
