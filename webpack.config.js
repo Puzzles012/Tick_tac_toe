@@ -10,10 +10,6 @@ module.exports = {
     
     mode: 'development',
     
-<<<<<<< HEAD
-    devServer: {    
-        port: 3001,    
-=======
     
     entry: './src/client/index.js',  
     output: {    
@@ -28,7 +24,6 @@ module.exports = {
     ],
    devServer: {    
         port: 3000,    
->>>>>>> bd0b93a77dee45900999cbfd738e89469c970dcd
         open: true,    
         proxy: {      
             "/api": "http://localhost:8080"    
