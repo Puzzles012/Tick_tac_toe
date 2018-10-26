@@ -87,27 +87,7 @@ function readStdInput(){
 
 const board = exports.initializeBoard();
 
-const maxTurns = 9;
 
-var playerXScore = 0;
-var playerOScore = 0;
-var playAgain = true;
-
-
-while(playAgain){
-	var winner = gameLoop();
-
-	if(winner == 'X'){
-		playerXScore++;
-	}
-
-	else if(winner == 'O'){
-		playerOScore++;
-	}
-
-	//TODO: play again?
-	playAgain = false;
-}
 
 
 
