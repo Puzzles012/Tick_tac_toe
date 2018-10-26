@@ -8,11 +8,11 @@ together the bits and pieces through the latter half of this class, into a coher
 Each team should implement the game TicTacToe. The main focus is on the infrastructure and best
 coding practices described below but not on implemented features.
 The project and infrastructure should tackle the following:
-1. The codebase is stored in source control system on GitHub from early start of the project (the
+[x] 1. The codebase is stored in source control system on GitHub from early start of the project (the
 teacher should be able to track the history of the project from the creation of the very first
 file).
-2. The system is setup with automatic build tool.
-3. The build tool runs all unit tests.
+[x] 2. The system is setup with automatic build tool.
+[x] 3. The build tool runs all unit tests.
 4. The output is a deployable or executable artifact (note this is not applicable if the project
 running a Web App).
 5. The build script has deploy/install target that deploys the executable outside of the working
@@ -21,7 +21,7 @@ directory (console app) or on external server (web app).
 7. The code should be loosely coupled and follow good object oriented design practices.
 8. Documentation uses Markdown syntax.
 9. Use Automated Continuous Integration Server.
-10. Use feature branches and pull request for all features. It must be clear that this workflow was
+[x] 10. Use feature branches and pull request for all features. It must be clear that this workflow was
 used the whole time and that the team was using reviews before accepting pull-requests.
 11. More build targets (0,5 point per item, never more than 1 for this part) here are examples of
 build targets.
