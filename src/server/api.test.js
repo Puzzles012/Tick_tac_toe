@@ -9,5 +9,9 @@ describe("GET /tic tac toe/:player endpoint", () => {
     it("should return the gameboard", async () => {
         const res = await request(api).get("/ttt/o");    
         expect(res.body.game).toBe("it's x turn");  
-    });
+    });/*
+    it("should return the gameboard", async () => {
+        const res = await request(api).get("");    
+        expect(res.body.index).toBe('<tr><td>.</td><td>.</td><td>.<td></td></tr><tr><td>.</td><td>.</td><td>.</td></tr><tr><td>.</td><td>.</td><td>.<td></td></tr>');
+    });*/
 });

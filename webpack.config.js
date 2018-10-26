@@ -1,7 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackCleanPlugin = require("clean-webpack-plugin");
-const webpack = require("webpack");
+
 const path = require('path');
+
+var dist = path.resolve(__dirname, "dist");
+var source = path.resolve(__dirname, "src/client");
 
 module.exports = {      
     
@@ -11,15 +14,13 @@ module.exports = {
     entry: './src/client/index.js',  
     output: {    
         filename: 'main.js',    
-        path: path.resolve(__dirname, 'dist')
+        path: dist
     },
     plugins: [    
         new HtmlWebpackPlugin({        
-            filename: 'index.html',
-            inject: true,
-            title: 'Tic tac toe'
+            template: source + '/index.html'
         }),
-        new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
+       // new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
     ],
    devServer: {    
         port: 3000,    
