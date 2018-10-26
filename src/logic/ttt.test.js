@@ -7,17 +7,6 @@ test("should switch player", () =>{
 test("should return error if it's other than x or o", () =>{
 	expect(turn.playerTurn("b")).toBe("X and O only");
 });
-//const game = require("./ttt");
-
-/*
-describe('Player Turn Testing', function() {
-	
-});
-
-describe('Board Testing', function() {
-	
-});
-*/
 
 test("initializeBoard()", () => {
 	expect(turn.initializeBoard()).toEqual(['.', '.', '.', '.', '.', '.', '.', '.', '.']);
