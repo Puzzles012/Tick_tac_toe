@@ -1,4 +1,4 @@
-
+const Loop = require("src/logic/ttt.js")
 
 function gameLoop(){
 	var gameOver = false;
@@ -7,18 +7,18 @@ function gameLoop(){
 	var winner = null;
 
 	while(!gameOver){
-		exports.displayBoard();
+		Loop.displayBoard();
 		
-		exports.pickSquare(1, playerTurn);
+		Loop.pickSquare(1, playerTurn);
 
-		if(exports.checkWinner() != null){
+		if(Loop.checkWinner() != null){
 			gameOver = true;
-			winner = exports.checkWinner();
+			winner = Loop.checkWinner();
 			console.log(winner + " is the winner!");
 			return winner;
 		}
 
-		if(exports.checkWinner() == null && turnCount == 9){
+		if(Loop.checkWinner() == null && turnCount == 9){
 			console.log("DRAW!");
 			gameOver = true;
 			return winner;
