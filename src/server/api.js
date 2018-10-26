@@ -19,7 +19,17 @@ app.get("/ttt/:player", (req, res) => {
 app.get("/" ,(req, res) => {
     res.status(200).sendfile("index.html", {root: start});
 });
-
+app.get("/:file", (req, res) => {
+    var file = req.params.file;
+     //send file if it exists with status code 200
+    if(fs.existsSync(start+ "/" +file)){
+        res.status(200).sendFile(file, {root: start});
+    }
+    //if not, only send status 404
+    else{
+        res.status(404).end();
+    }
+});
 
 module.exports = app;
 
