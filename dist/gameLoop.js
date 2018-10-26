@@ -1,56 +1,51 @@
-const game = require("../src/logic/ttt.js");
-
-//const game = $.getScript("../src/logic/ttt.js");
-
-//var game = getScript("../src/logic/ttt.js");
-/*var $ = jQuery;
-
-$.getScript("../src/logic/ttt.js", function(){
-	alert('load');
-})*/
-//import * from '../src/logic/ttt.js'
-//console.log("yes");
+const Loop = require("src/logic/ttt.js")
 
 function gameLoop(){
 	var gameOver = false;
-	var turnCount = 0;
+    var turnCount = 0;
 	var playerTurn = 'X';
 	var winner = null;
 
 	while(!gameOver){
-		game.pickSquare(1, playerTurn);
+		Loop.displayBoard();
+		
+		Loop.pickSquare(1, playerTurn);
 
-		if(game.checkWinner() != null){
+		if(Loop.checkWinner() != null){
 			gameOver = true;
-			winner = game.checkWinner();
+			winner = Loop.checkWinner();
 			console.log(winner + " is the winner!");
 			return winner;
 		}
 
-		if(game.checkWinner() == null && turnCount == 9){
+		if(Loop.checkWinner() == null && turnCount == 9){
 			console.log("DRAW!");
 			gameOver = true;
 			return winner;
 		}
-		playerTurn = game.playerTurn(playerTurn);
+		playerTurn = exports.playerTurn(playerTurn);
 		turnCount++;
 	}
 }
+
+const maxTurns = 9;
 
 var playerXScore = 0;
 var playerOScore = 0;
 var playAgain = true;
 
-var winner = gameLoop();
 
-if(winner == 'X'){
-	playerXScore++;
+while(playAgain){
+	var winner = gameLoop();
+
+	if(winner == 'X'){
+		playerXScore++;
+	}
+
+	else if(winner == 'O'){
+		playerOScore++;
+	}
+
+	//TODO: play again?
+	playAgain = false;
 }
-
-else if(winner == 'O'){
-	playerOScore++;
-}
-
-//TODO: play again?
-playAgain = false;
- 
