@@ -1,7 +1,7 @@
 console.log("Hello World");
 
 const Loop = require("../../src/logic/ttt.js")
-
+require('./style.css')
 function gameLoop(){
 	var gameOver = false;
     var turnCount = 0;

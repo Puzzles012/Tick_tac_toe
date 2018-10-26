@@ -1,51 +1,40 @@
-const Loop = require("src/logic/ttt.js")
+const Loop = require("./ttt.js")
+require('style.css')
 
-function gameLoop(){
-	var gameOver = false;
-    var turnCount = 0;
-	var playerTurn = 'X';
-	var winner = null;
+var totalturns = 0;
+var player = 'X';
+var xp = 0, op = 0;
 
-	while(!gameOver){
-		Loop.displayBoard();
+function addPlayerToBoard(){
+	var cid = this.id;
+	var valid = validMoves(cid);
+	if(valid == false){
 		
-		Loop.pickSquare(1, playerTurn);
-
-		if(Loop.checkWinner() != null){
-			gameOver = true;
-			winner = Loop.checkWinner();
-			console.log(winner + " is the winner!");
-			return winner;
+		document.getElementById('legalmove').innerHTML = "Illegal move";
+	}
+	else{
+		document.getElementById(cid).innerHTML = player;
+		totalturns++;
+		document.getElementById('legalmove').innerHTML = ""
+		
+		if(checkWinner){
+			document.getElementById('winner').innerHTML = "the winner is" +player;
 		}
-
-		if(Loop.checkWinner() == null && turnCount == 9){
-			console.log("DRAW!");
-			gameOver = true;
-			return winner;
+		else{
+			player = game.playerTurn(player);
+			document.getElementById('turn').innerHTML = player;
 		}
-		playerTurn = exports.playerTurn(playerTurn);
-		turnCount++;
 	}
 }
-
-const maxTurns = 9;
-
-var playerXScore = 0;
-var playerOScore = 0;
-var playAgain = true;
+var board = document.getElementsByClassName("board");/*
+for(int i = 0; i < 9; i++){
+	board[i].addEventLitsener("click", addPlayerToBoard);
+}*/
 
 
-while(playAgain){
-	var winner = gameLoop();
-
-	if(winner == 'X'){
-		playerXScore++;
-	}
-
-	else if(winner == 'O'){
-		playerOScore++;
-	}
-
-	//TODO: play again?
-	playAgain = false;
+document.getElementById("reset").addEventListener("click", resetBoard);
+function resetBoard(){
+	totalturns = 0;
+	player = 'X';
+	document.getElementById('winner').innerHTML = "";
 }

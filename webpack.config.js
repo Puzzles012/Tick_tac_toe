@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackCleanPlugin = require("clean-webpack-plugin");
-
+const webpack = require("webpack");
 const path = require('path');
 
 var dist = path.resolve(__dirname, "dist");
@@ -22,11 +22,19 @@ module.exports = {
         }),
        // new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
     ],
+    module: {
+        rules:[
+            {
+                test:/\.css$/,
+                use:['style-loader', 'css-loader']
+            }
+        ]
+    },
    devServer: {    
         port: 3001,    
         open: true,    
         proxy: {      
-            "/api": "http://localhost:8080"    
+            "/api": "http://localhost:5000"    
         }
     },
     
