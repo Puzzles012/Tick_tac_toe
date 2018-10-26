@@ -1,4 +1,4 @@
-const game = require("./src/logic/ttt.js");
+const game = require("./src/client/index.js");
 
 const app = require("./src/server/api");
 const PORT = process.env.PORT || 3001;

@@ -36,16 +36,15 @@ var playerXScore = 0;
 var playerOScore = 0;
 var playAgain = true;
 
-	var winner = gameLoop();
+var winner = gameLoop();
 
-	if(winner == 'X'){
-		playerXScore++;
-	}
+if(winner == 'X'){
+	playerXScore++;
+}
 
-	else if(winner == 'O'){
-		playerOScore++;
-	}
-
+else if(winner == 'O'){
+	playerOScore++;
+}
 
 
 

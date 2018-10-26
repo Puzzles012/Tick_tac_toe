@@ -88,11 +88,3 @@ function readStdInput(){
 const board = exports.initializeBoard();
 
 const maxTurns = 9;
-
-
-module.exports.displayBoard();
-module.exports.pickSquare(3, 2);
-module.exports.pickSquare(5, 2);
-module.exports.pickSquare(7, 2);
-module.exports.displayBoard();
-module.exports.displayBoard();
