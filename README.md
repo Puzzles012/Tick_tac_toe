@@ -65,17 +65,22 @@ Solving parts 1-10 perfectly will together give a grade of 6, it's OK to have al
 manual. Next parts need to be solved incrementally, e.g. finish part 11 before starting with part 12.
 Continuous Delivery is mandatory to get 10. We expect participation from each team member in the
 git history. If you are pairing please switch drivers regularly (and user on git).
-Return form
+Return form 
+
 [ ] 1. URL of root of the project in the source control system. If the repo is private you need to share
 it with the user hap2000.
+
 [ ] 2. Documentation. The following report should all be stored in a folder called docs in the root of
 the repository.
+
 Development manual: what is needed and how to get the project to build on a fresh
 machine, Source control client and access to source control Build environment, Other
 necessary dependencies for development.
+
 Administration manual: How to set it up and get it to run, also on a fresh machine. How
 to install and run the program on clients machine (in case of simple desktop program).
 How to deploy, run and maintain in case of client/server or web application.
+
 Design report: Document describing the initial design.
 # Demonstration
 The team will have a 15 minutes demonstration of the technical infrastructure and the simple
