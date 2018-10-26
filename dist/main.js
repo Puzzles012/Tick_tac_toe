@@ -124,9 +124,10 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
   !*** ./src/client/index.js ***!
   \*****************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("const _ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\r\n//const require = \r\nfunction component() {  \r\n    let element = document.createElement('div');  \r\n    element.innerHTML = _.join(['Hello', 'there!'], ' ');\r\n    return element;\r\n}\r\ndocument.body.appendChild(component());\n\n//# sourceURL=webpack:///./src/client/index.js?");
+eval("\n\n//# sourceURL=webpack:///./src/client/index.js?");
+
 
 /***/ })
 
