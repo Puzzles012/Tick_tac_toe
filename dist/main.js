@@ -137,7 +137,7 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const _ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\r\nconst board = __webpack_require__(/*! ../logic/ttt.js */ \"./src/logic/ttt.js\");\r\nfunction component() {  \r\n    let element = document.createElement('div');  \r\n   // let markup = '<tr><td>element[0]</td><td>element[1]</td><td>element[2]<td></td><tr>';\r\n    \r\n    element.innerHTML = _.join('It is x turn');\r\n    return element;\r\n}\r\ndocument.body.appendChild(component());\n\n//# sourceURL=webpack:///./src/client/index.js?");
+eval("const _ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\r\nconst board = __webpack_require__(/*! ../logic/ttt */ \"./src/logic/ttt.js\");\r\n//const table = require('./index.html');\r\n\r\nfunction component() {  \r\n    let element = document.createElement('table');  \r\n   // let board = board.displayBoard;\r\n    var values = '<tr><td>.</td><td>.</td><td>.<td></td></tr><tr><td>.</td><td>.</td><td>.</td></tr><tr><td>.</td><td>.</td><td>.<td></td></tr>';\r\n    //element.innerText = markup;\r\n    element.innerHTML = values;\r\n    return element;\r\n}\r\ndocument.body.appendChild(component());\n\n//# sourceURL=webpack:///./src/client/index.js?");
 
 /***/ }),
 

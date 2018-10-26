@@ -1,10 +1,13 @@
 const _ = require("lodash");
-const board = require('../logic/ttt.js');
+const board = require('../logic/ttt');
+//const table = require('./index.html');
+
 function component() {  
-    let element = document.createElement('div');  
-   // let markup = '<tr><td>element[0]</td><td>element[1]</td><td>element[2]<td></td><tr>';
-    
-    element.innerHTML = _.join('It is x turn');
+    let element = document.createElement('table');  
+   // let board = board.displayBoard;
+    var values = '<tr><td>.</td><td>.</td><td>.<td></td></tr><tr><td>.</td><td>.</td><td>.</td></tr><tr><td>.</td><td>.</td><td>.<td></td></tr>';
+    //element.innerText = markup;
+    element.innerHTML = values;
     return element;
 }
 document.body.appendChild(component());

@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackCleanPlugin = require("clean-webpack-plugin");
+const webpack = require("webpack");
 const path = require('path');
 
 module.exports = {      
@@ -7,7 +8,7 @@ module.exports = {
     mode: 'development',
     
     
-     entry: './src/client/index.js',  
+    entry: './src/client/index.js',  
     output: {    
         filename: 'main.js',    
         path: path.resolve(__dirname, 'dist')
