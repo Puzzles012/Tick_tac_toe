@@ -1,50 +1,71 @@
-const Loop = require("../../src/logic/ttt.js");
+const logic = require("../logic/ttt.js")
 
-console.log("Hello World");
+var player = 'X';
+var totalturns = 0;
+var xp = 0, op = 0;
 
-function gameLoop(){
-	var gameOver = false;
-    var turnCount = 0;
-	var playerTurn = 'X';
-	var winner = null;
+const board = document.getElementsByClassName("square");
 
-	while(!gameOver){
-		Loop.displayBoard();
-		
-		Loop.pickSquare(1, playerTurn);
+Array.prototype.forEach.call(board, square => square.addEventListener("click", addToBoard));
 
-		if(Loop.checkWinner() != null){
-			gameOver = true;
-			winner = Loop.checkWinner();
-			console.log(winner + " is the winner!");
-			return winner;
-		}
+const getBoard = () => Array.from(board, cell => cell.innerHTML);
 
-		if(Loop.checkWinner() == null && turnCount == 9){
-			console.log("DRAW!");
-			gameOver = true;
-			return winner;
-		}
-		playerTurn = Loop.playerTurn(playerTurn);
-		turnCount++;
-	}
+function addToBoard(b){
+    const {id} = b.target;
+    trg = b.target.innerHTML;
+ 
+    if(trg == ""){
+        totalturns++;
+        document.getElementById(id).innerHTML = logic.pickSquare(id, player);
+        
+
+        logic.displayBoard();
+        if(checkWinner() != null){
+            var res = document.getElementsByClassName('winner')[0];
+            res.innerHTML = "the winner is " + player;
+            console.log(checkWinner() + " is the winner");
+        }
+        else if(totalturns == 9 && checkWinner() == null){
+            console.log("DRAW");
+        }
+        else{
+            player = logic.playerTurn(player);
+        }
+
+       // displayPlayer(player);
+        }
+        else{
+            console.log("Illegal move");
+        }
+    
 }
 
-const maxTurns = 9;
-
-var playerXScore = 0;
-var playerOScore = 0;
-var playAgain = true;
-
-var winner = gameLoop();
-
-if(winner == 'X'){
-	playerXScore++;
+function writeToboard(cid){
+    document.getElementById(cid).innerHTML = player;
 }
 
-else if(winner == 'O'){
-	playerOScore++;
+/*
+helpme
+function displayPlayer(player){
+    console.log('it is ' + player + ' turn!');
+    document.getElementById('turn').innerHTML = player;
+}
+*/
+function checkBoard(){
+    //let boardArray = () Array.from(getBoard, values =>values.)
+    var winner = logic.checkWinner();
+    if(winner == 'X' || winner == 'O'){
+        return true;
+    }
+
+    else if(bla == "X" || bla == "O"){
+        return 0;
+    }
+    else{
+        return 1;
+    }
 }
 
-
-
+function checkWinner(){
+    return logic.checkWinner();
+}

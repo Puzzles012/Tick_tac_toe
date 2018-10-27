@@ -1,7 +1,5 @@
 exports.playerTurn = function playerTurn(curPlayer){
-	if((curPlayer != "X" && curPlayer != "O") && (curPlayer != "x" && curPlayer != "o")){
-		return "X and O only"
-	}
+
 	if(curPlayer == "X"){
         curPlayer = "O";
     }
@@ -24,11 +22,11 @@ exports.displayBoard = function displayBoard(){
 	for(var i = 0; i < board.length; i++){
 		if(i % 3 == 0){
 			console.log();
+			console.log(board[i]);
 			//document.write(board[i] + " ");
-			console.log(board[i] + " ");
 		}else{
 			//document.write(board[i] + " ");
-			console.log(board[i] + " ");
+			console.log(board[i]);
 		}
 	}
 
@@ -36,24 +34,26 @@ exports.displayBoard = function displayBoard(){
 }
 
 exports.pickSquare = function pickSquare(squareNumber, player){
-	if(board[squareNumber - 1] == '.'){
+	if(board[squareNumber] == '.'){
 		if(player == 'X'){
-			board[squareNumber - 1] = 'X';
+			board[squareNumber] = 'X';
 		}
 
 		if(player == 'O'){
-			board[squareNumber - 1] = 'O';
+			board[squareNumber] = 'O';
 		}
 	}
 
-	return board;
+	return player;
 }
 
 exports.checkWinner = function checkWinner(){
 
+	var winner = null;
+
 	for(var i = 0; i < 3; i++){
 		if(board[i] == board[3 + i] && board[i] == board[6 + i] && board[i] != '.'){
-			return board[i];
+			winner = board[i];
 		}
 	}
 
@@ -64,14 +64,15 @@ exports.checkWinner = function checkWinner(){
 	}
 
 	if(board[0] == board[4] && board[0] == board[8] && board[0] != '.'){
-		return board[0];
+		winner = board[0];
 	}
 
 	if(board[2] == board[4] && board[2] == board[6] && board[2] != '.'){
-		return board[2];
+		winner = board[2];
 	}
 
-	return null;
+	return winner;
+
 }
 
 function readStdInput(){
@@ -88,3 +89,12 @@ function readStdInput(){
 const board = exports.initializeBoard();
 
 const maxTurns = 9;
+
+/*
+module.exports.displayBoard();
+module.exports.pickSquare(3, 2);
+module.exports.pickSquare(5, 2);
+module.exports.pickSquare(7, 2);
+module.exports.displayBoard();
+module.exports.displayBoard();
+*/
