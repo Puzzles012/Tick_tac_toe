@@ -18,7 +18,7 @@ exports.initializeBoard = function initializeBoard(){
 	} 
 	return array;
 }
-
+/*
 exports.displayBoard = function displayBoard(){
 	//prints the board to console.
 	for(var i = 0; i < board.length; i++){
@@ -32,7 +32,7 @@ exports.displayBoard = function displayBoard(){
 
 	console.log("\n");
 }
-
+*/
 exports.pickSquare = function pickSquare(squareNumber, player){
 	if(board[squareNumber - 1] == '.'){
 		if(player == 'X'){
@@ -89,10 +89,11 @@ const board = exports.initializeBoard();
 
 const maxTurns = 9;
 
-
+/*
 module.exports.displayBoard();
 module.exports.pickSquare(3, 2);
 module.exports.pickSquare(5, 2);
 module.exports.pickSquare(7, 2);
 module.exports.displayBoard();
 module.exports.displayBoard();
+*/

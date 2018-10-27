@@ -22,6 +22,14 @@ module.exports = {
         }),
        // new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
     ],
+    module: {
+        rules:[
+            {
+                test:/\.css$/,
+                use:['style-loader', 'css-loader']
+            }
+        ]
+    },
    devServer: {    
         port: 3001,    
         open: true,    
