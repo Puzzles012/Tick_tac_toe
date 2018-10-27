@@ -24,9 +24,11 @@ exports.displayBoard = function displayBoard(){
 	for(var i = 0; i < board.length; i++){
 		if(i % 3 == 0){
 			console.log();
-			document.write(board[i] + " ");
+			//document.write(board[i] + " ");
+			console.log(board[i] + " ");
 		}else{
-			document.write(board[i] + " ");
+			//document.write(board[i] + " ");
+			console.log(board[i] + " ");
 		}
 	}
 
@@ -82,8 +84,6 @@ function readStdInput(){
 		input.close();
 	});
 }
-
-
 
 const board = exports.initializeBoard();
 
