@@ -1,6 +1,6 @@
-console.log("Hello World");
+const Loop = require("../../src/logic/ttt.js");
 
-const Loop = require("../../src/logic/ttt.js")
+console.log("Hello World");
 
 function gameLoop(){
 	var gameOver = false;
