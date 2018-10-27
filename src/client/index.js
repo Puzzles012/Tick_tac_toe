@@ -5,11 +5,10 @@ var totalturns = 0;
 var xp = 0, op = 0;
 
 const board = document.getElementsByClassName("square");
-
+const reset = document.getElementById("reset");
 Array.prototype.forEach.call(board, square => square.addEventListener("click", addToBoard));
 
-const getBoard = () => Array.from(board, cell => cell.innerHTML);
-
+reset.addEventListener("click", resetFunc);
 function addToBoard(b){
     const {id} = b.target;
     trg = b.target.innerHTML;
@@ -23,9 +22,8 @@ function addToBoard(b){
         if(checkWinner() != null){
             var res = document.getElementsByClassName('winner')[0];
             res.innerHTML = "the winner is " + player;
-            console.log(checkWinner() + " is the winner");
-            
-Array.prototype.forEach.call(board, square => square.removeEventListener("click", addToBoard));
+            console.log(checkWinner() + " is the winner");            
+            Array.prototype.forEach.call(board, square => square.removeEventListener("click", addToBoard));
 
         }
         else if(totalturns == 9 && checkWinner() == null){
@@ -54,19 +52,20 @@ function displayPlayer(player){
     document.getElementById('turn').innerHTML = player;
 }
 */
-function checkBoard(){
-    //let boardArray = () Array.from(getBoard, values =>values.)
-    var winner = logic.checkWinner();
-    if(winner == 'X' || winner == 'O'){
-        return true;
-    }
 
-    else if(bla == "X" || bla == "O"){
-        return 0;
+function resetFunc(){  
+    var values = document.getElementsByTagName('span');
+    logic.reset();
+    for(let i = 0; i < values.length; i++) {
+        values[i].innerHTML = ''
     }
-    else{
-        return 1;
-    }
+    player = 'X';
+    totalturns = 0;
+
+    var res = document.getElementsByClassName('winner')[0];
+    res.innerHTML = ""; 
+    Array.prototype.forEach.call(board, square => square.addEventListener("click", addToBoard));
+    winner = null;
 }
 
 function checkWinner(){

@@ -1,10 +1,10 @@
 exports.playerTurn = function playerTurn(curPlayer){
 
-	if(curPlayer == "X"){
-        curPlayer = "O";
+	if(curPlayer == 'X'){
+        curPlayer = 'O';
     }
     else{
-        curPlayer = "X"
+        curPlayer = 'X'
     }
     return curPlayer;
 }
@@ -85,8 +85,11 @@ function readStdInput(){
 		input.close();
 	});
 }
+exports.reset = function reset(){
+	board = exports.initializeBoard();
+}
 
-const board = exports.initializeBoard();
+let board = exports.initializeBoard();
 
 const maxTurns = 9;
 
