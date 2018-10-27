@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "test": "jest",
-    "heroku-postbuild": "weboack -p",
+    "heroku-postbuild": "webpack -p",
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
     "start": "node app"
@@ -26,6 +26,7 @@
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.4.0",
     "jest": "^23.6.0",
@@ -84,7 +85,6 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "express": "^4.16.4",
-    "extract-loader": "^3.0.0",
     "jquery": "^3.3.1",
     "lodash": "^4.17.11"
   }
