@@ -67,29 +67,24 @@
 }
 
 .square:hover{
-    background-color: #fff;
+    background-color: rgb(249, 80, 1);
     cursor: pointer;
 }
 
 .winner{
-    display: none;
     padding: 12px;
-    font-size: 30px;
     color: firebrick;
 }
     </style>
 </head>
 <body id="backgroundHW">
-    <div>
+   
         <div class="board-container flex-container flex-column flex-center">
             <div class="flex-container">
                 <!-- <img src="Puzzle.png" alt="loc" width="75" height="75"> -->
                 <div  class="title">Tic Tac Toe</div>
             </div>
-            <div class="flex-container flex-center">
-                <div class="winner"></div>
-              <!--  <button class="reset">Reset</button>-->
-            </div>
+            
             <div>
                 <div class="board flex-container flex-wrap">
                     <div class="flex-container flex-center"><span id ="0" class="square"></span></div>
@@ -107,6 +102,10 @@
                     <div class="flex-container flex-center"><span id ="8" class="square"></span></div>
                 </div>
             </div>
+            <div class="flex-container flex-center">
+                    <div ><h1 class="winner"></h1></div>
+                  <!--  <button class="reset">Reset</button>-->
+                </div>
         </div>
 <script type="text/javascript" src="main.js"></script></body>
 

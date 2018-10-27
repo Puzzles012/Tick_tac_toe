@@ -44,7 +44,7 @@ exports.pickSquare = function pickSquare(squareNumber, player){
 		}
 	}
 
-	return board;
+	return player;
 }
 
 exports.checkWinner = function checkWinner(){
