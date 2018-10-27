@@ -6,8 +6,16 @@ var xp = 0, op = 0;
 
 const board = document.getElementsByClassName("square");
 
-Array.prototype.forEach.call(board, square => square.addEventListener("click", addToBoard));
+if(Array.prototype.forEach.call(board, square => square.addEventListener("click", addToBoard))){
+	console.log("hello");
+	if(player == 'x'){
+    	player = 'o';
+    }
 
+    else{
+    	player = 'x';
+    }
+};
 
 const getBoard = () => Array.from(board, cell => cell.innerHTML);
 
@@ -19,12 +27,10 @@ function addToBoard(b){
     trg = b.target.innerHTML;
     console.log(b.target);
       
-        totalturns++;
-        document.getElementById(id).innerHTML = player;
+    totalturns++;
 
+    document.getElementById(id).innerHTML = player;
 }
-
-
 
 function writeToboard(cid){
     document.getElementById(cid).innerHTML = player;
@@ -49,9 +55,9 @@ function validmoves(cid){
         return 1;
     }
 }
+
 function checkWinner(){
     winner = logic.checkWinner(getBoard);
-
 }
 
 function checkifdraw(){
