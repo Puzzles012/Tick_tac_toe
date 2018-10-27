@@ -1,7 +1,5 @@
 exports.playerTurn = function playerTurn(curPlayer){
-	if((curPlayer != "X" && curPlayer != "O") && (curPlayer != "x" && curPlayer != "o")){
-		return "X and O only"
-	}
+
 	if(curPlayer == "X"){
         curPlayer = "O";
     }
@@ -18,37 +16,41 @@ exports.initializeBoard = function initializeBoard(){
 	} 
 	return array;
 }
-/*
+
 exports.displayBoard = function displayBoard(){
 	//prints the board to console.
 	for(var i = 0; i < board.length; i++){
 		if(i % 3 == 0){
 			console.log();
-			document.write(board[i] + " ");
+			console.log(board[i]);
+			//document.write(board[i] + " ");
 		}else{
-			document.write(board[i] + " ");
+			//document.write(board[i] + " ");
+			console.log(board[i]);
 		}
 	}
 
 	console.log("\n");
 }
-*/
+
 exports.pickSquare = function pickSquare(squareNumber, player){
-	if(board[squareNumber - 1] == '.'){
+	if(board[squareNumber] == '.'){
 		if(player == 'X'){
-			board[squareNumber - 1] = 'X';
+			board[squareNumber] = 'X';
 		}
 
 		if(player == 'O'){
-			board[squareNumber - 1] = 'O';
+			board[squareNumber] = 'O';
 		}
 	}
 
-	return player;
+	return board;
 }
 
 exports.checkWinner = function checkWinner(){
-	var winner = false;
+
+	var winner = null;
+
 	for(var i = 0; i < 3; i++){
 		if(board[i] == board[3 + i] && board[i] == board[6 + i] && board[i] != '.'){
 			winner = board[i];
@@ -70,6 +72,7 @@ exports.checkWinner = function checkWinner(){
 	}
 
 	return winner;
+
 }
 
 function readStdInput(){
@@ -82,8 +85,6 @@ function readStdInput(){
 		input.close();
 	});
 }
-
-
 
 const board = exports.initializeBoard();
 

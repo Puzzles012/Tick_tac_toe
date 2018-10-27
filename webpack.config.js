@@ -17,10 +17,12 @@ module.exports = {
         path: dist
     },
     plugins: [    
+    /*
         new HtmlWebpackPlugin({        
             template: source + '/index.html'
         }),
         new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
+        */
     ],
     module: {
         rules:[
