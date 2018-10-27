@@ -33,25 +33,13 @@ function addToBoard(b){
             player = logic.playerTurn(player);
         }
 
-       // displayPlayer(player);
-        }
-        else{
-            console.log("Illegal move");
-        }
+    }
     
 }
 
 function writeToboard(cid){
     document.getElementById(cid).innerHTML = player;
 }
-
-/*
-helpme
-function displayPlayer(player){
-    console.log('it is ' + player + ' turn!');
-    document.getElementById('turn').innerHTML = player;
-}
-*/
 
 function resetFunc(){  
     var values = document.getElementsByTagName('span');
