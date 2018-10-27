@@ -15,10 +15,14 @@ function addToBoard(b){
     trg = b.target.innerHTML;
  
     if(trg == ""){
-        totalturns++;
-        document.getElementById(id).innerHTML = logic.pickSquare(id, player);
-        player = logic.playerTurn(player);
-
+        if(checkBoard() == true){
+            document.getElementById('winner').innerHTML = "The winner is " + player;
+        }
+        else{
+          totalturns++;
+          document.getElementById(id).innerHTML = logic.pickSquare(id, player);
+          player = logic.playerTurn(player);
+        }
         logic.displayBoard();
 
     	if(checkWinner() != null){
@@ -28,6 +32,10 @@ function addToBoard(b){
     	if(totalturns == 9){
     		console.log("DRAW");
     	}
+
+       // displayPlayer(player);
+        }
+
     }
     else{
         console.log("Illegal move");
@@ -38,17 +46,20 @@ function writeToboard(cid){
     document.getElementById(cid).innerHTML = player;
 }
 
+/*
+helpme
 function displayPlayer(player){
     console.log('it is ' + player + ' turn!');
     document.getElementById('turn').innerHTML = player;
 }
-
-function validmoves(cid){
-    var bla = document.getElementById(cid).innerHTML;
-    //if there's already a winner, to make it impossible to put more stuff on board
-    if(checkWinner() == true){
-        return 0;
+*/
+function checkBoard(){
+    //let boardArray = () Array.from(getBoard, values =>values.)
+    var winner = logic.checkWinner();
+    if(winner == 'X' || winner == 'O'){
+        return true;
     }
+
     else if(bla == "X" || bla == "O"){
         return 0;
     }

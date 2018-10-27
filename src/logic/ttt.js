@@ -1,4 +1,5 @@
 exports.playerTurn = function playerTurn(curPlayer){
+
 	if(curPlayer == "X"){
         curPlayer = "O";
     }
@@ -47,7 +48,9 @@ exports.pickSquare = function pickSquare(squareNumber, player){
 }
 
 exports.checkWinner = function checkWinner(){
+
 	var winner = null;
+
 	for(var i = 0; i < 3; i++){
 		if(board[i] == board[3 + i] && board[i] == board[6 + i] && board[i] != '.'){
 			winner = board[i];
@@ -69,6 +72,18 @@ exports.checkWinner = function checkWinner(){
 	}
 
 	return winner;
+
+}
+
+function readStdInput(){
+	var input = readline.createInterface({
+		input: process.stdin,
+		output: process.stdout
+	});
+
+	return input.question("bleh", function(answer){
+		input.close();
+	});
 }
 
 const board = exports.initializeBoard();
