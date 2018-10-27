@@ -1,3 +1,4 @@
+var curPlayer = 'X';
 exports.playerTurn = function playerTurn(curPlayer){
 	if((curPlayer != "X" && curPlayer != "O") && (curPlayer != "x" && curPlayer != "o")){
 		return "X and O only"

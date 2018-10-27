@@ -20,7 +20,7 @@ module.exports = {
         new HtmlWebpackPlugin({        
             template: source + '/index.html'
         }),
-       // new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
+        new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
     ],
     module: {
         rules:[
