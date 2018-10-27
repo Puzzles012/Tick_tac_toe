@@ -17,13 +17,23 @@ module.exports = {
         path: dist
     },
     plugins: [    
+    /*
         new HtmlWebpackPlugin({        
             template: source + '/index.html'
         }),
-       // new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
+        new WebpackCleanPlugin(["dist"], {exclude: ["index.html"]})
+        */
     ],
+    module: {
+        rules:[
+            {
+                test:/\.css$/,
+                use:['style-loader', 'css-loader']
+            }
+        ]
+    },
    devServer: {    
-        port: 3001,    
+        port: 3000,    
         open: true,    
         proxy: {      
             "/api": "http://localhost:8080"    
