@@ -1,6 +1,6 @@
 const logic = require("../logic/ttt.js")
 
-var player = 'x';
+var player = 'X';
 var totalturns = 0;
 var xp = 0, op = 0;
 
@@ -25,11 +25,16 @@ console.log()
 function addToBoard(b){
     const {id} = b.target;
     trg = b.target.innerHTML;
+    console.log(id);
     console.log(b.target);
-      
-    totalturns++;
-
-    document.getElementById(id).innerHTML = player;
+    if(trg == ""){
+        totalturns++;
+        document.getElementById(id).innerHTML = logic.pickSquare(id, player);
+        player = logic.playerTurn(player);
+    }
+    else{
+        console.log("Illegal move");
+    }
 }
 
 function writeToboard(cid){
@@ -58,11 +63,4 @@ function validmoves(cid){
 
 function checkWinner(){
     winner = logic.checkWinner(getBoard);
-}
-
-function checkifdraw(){
-    if(totalturns == 9  && checkWinner() == false){
-        console.log('it is draw, better luck next time');
-        return 1;
-    }
 }

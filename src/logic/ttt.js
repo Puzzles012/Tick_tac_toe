@@ -1,8 +1,6 @@
-var curPlayer = 'X';
+
 exports.playerTurn = function playerTurn(curPlayer){
-	if((curPlayer != "X" && curPlayer != "O") && (curPlayer != "x" && curPlayer != "o")){
-		return "X and O only"
-	}
+
 	if(curPlayer == "X"){
         curPlayer = "O";
     }
@@ -45,7 +43,7 @@ exports.pickSquare = function pickSquare(squareNumber, player){
 		}
 	}
 
-	return board;
+	return player;
 }
 
 exports.checkWinner = function checkWinner(){
