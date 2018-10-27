@@ -24,6 +24,9 @@ function addToBoard(b){
             var res = document.getElementsByClassName('winner')[0];
             res.innerHTML = "the winner is " + player;
             console.log(checkWinner() + " is the winner");
+            
+Array.prototype.forEach.call(board, square => square.removeEventListener("click", addToBoard));
+
         }
         else if(totalturns == 9 && checkWinner() == null){
             console.log("DRAW");
