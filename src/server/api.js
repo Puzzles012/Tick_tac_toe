@@ -28,7 +28,6 @@ app.get("/:file", (req, res) => {
     //if not, only send status 404
     else{
         res.status(404).end();
-        console.log("yes");
     }
 });
 
