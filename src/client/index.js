@@ -6,31 +6,28 @@ var xp = 0, op = 0;
 
 const board = document.getElementsByClassName("square");
 
-if(Array.prototype.forEach.call(board, square => square.addEventListener("click", addToBoard))){
-	console.log("hello");
-	if(player == 'x'){
-    	player = 'o';
-    }
-
-    else{
-    	player = 'x';
-    }
-};
+Array.prototype.forEach.call(board, square => square.addEventListener("click", addToBoard));
 
 const getBoard = () => Array.from(board, cell => cell.innerHTML);
-
-console.log(board);
-console.log()
 
 function addToBoard(b){
     const {id} = b.target;
     trg = b.target.innerHTML;
-    console.log(id);
-    console.log(b.target);
+ 
     if(trg == ""){
         totalturns++;
         document.getElementById(id).innerHTML = logic.pickSquare(id, player);
         player = logic.playerTurn(player);
+
+        logic.displayBoard();
+
+    	if(checkWinner() != null){
+    		console.log(checkWinner() + " is the winner");
+    	}
+
+    	if(totalturns == 9){
+    		console.log("DRAW");
+    	}
     }
     else{
         console.log("Illegal move");
@@ -39,11 +36,10 @@ function addToBoard(b){
 
 function writeToboard(cid){
     document.getElementById(cid).innerHTML = player;
-    console.log(player);
 }
 
 function displayPlayer(player){
-    console.log('it is ' +player+ ' turn!');
+    console.log('it is ' + player + ' turn!');
     document.getElementById('turn').innerHTML = player;
 }
 
@@ -62,5 +58,5 @@ function validmoves(cid){
 }
 
 function checkWinner(){
-    winner = logic.checkWinner(getBoard);
+    return logic.checkWinner();
 }
