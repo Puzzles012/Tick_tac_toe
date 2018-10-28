@@ -21,19 +21,19 @@ file).
 
 [X] 3. The build tool runs all unit tests.
 
-[ ] 4. The output is a deployable or executable artifact (note this is not applicable if the project
+[X] 4. The output is a deployable or executable artifact (note this is not applicable if the project
 running a Web App).
 
-[ ] 5. The build script has deploy/install target that deploys the executable outside of the working
+[X] 5. The build script has deploy/install target that deploys the executable outside of the working
 directory (console app) or on external server (web app).
 
-[/] 6. The business logic should be coded using Test Driven Development.
+[X] 6. The business logic should be coded using Test Driven Development.
 
-[/] 7. The code should be loosely coupled and follow good object oriented design practices.
+[X] 7. The code should be loosely coupled and follow good object oriented design practices.
 
-[ ] 8. Documentation uses Markdown syntax.
+[X] 8. Documentation uses Markdown syntax.
 
-[ ] 9. Use Automated Continuous Integration Server.
+[X] 9. Use Automated Continuous Integration Server.
 
 [X] 10. Use feature branches and pull request for all features. It must be clear that this workflow was
 used the whole time and that the team was using reviews before accepting pull-requests.
