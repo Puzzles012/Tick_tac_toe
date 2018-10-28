@@ -8,82 +8,80 @@
     <script type="text/javascript"></script>
     <script src="app.js"></script>
     
-
-   <!-- <link dist\lagout="icon" href="Puzzle.png"> -->
-    
     <script dist\lagout="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     
     <title>Puzzle Tic Tac toe</title>
     <style>
-    #backgroundHW {
-        background: url(halloween.jpg);
-        background-repeat: no-repeat;
-        background-size: auto;
-        background-color: pink
+        #backgroundHW {
+            background: url(halloween2.jpg);
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-color: rgb(250, 9, 150);
+            color: #fff;
             }
-            body{
-    height:100%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+            .body{
+                height:100%;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
 
-.flex-container{
-    display: flex;
-}
+            .flex-container{
+                display: flex;
+            }
 
-.flex-column{
-    flex-direction: column;
-}
+            .flex-column{
+                flex-direction: column;
+            }
 
-.flex-weap{
-    flex-wrap: wrap;
-}
+            .flex-weap{
+                flex-wrap: wrap;
+            }
 
-.flex-center{
-    justify-content:center;
-    align-items: center;
-}
+            .flex-center{
+                justify-content:center;
+                align-items: center;
+            }
 
-.title{
-    font-size: 40px;
-    color: rgb(248, 245, 245);
-    margin-bottom: 5px;
-}
+            .title{
+                font-size: 40px;
+                color: rgb(248, 245, 245);
+                margin-bottom: 5px;
+            }
 
-.board-container{
-    height: 100%;
-    width: 100%;
-}
+            .board-container{
+                height: 100%;
+                width: 100%;
+            }
 
-.board{
-    width: 600px;
-}
+            .board{
+                width: 499px;
+            }
 
-.square{
-    width: 10px;
-    height: 1px;
-    border: 5px solid #fff;
-    font-size: 50px;
-    padding: 90px;
-    margin-left: 2px;
-    margin-top: 2px;
-}
+            .square{
+                width: 10px;
+                height: 10px;
+                border: 5px solid #fff;
+                font-size: 50px;
+                padding: 70px;
+                margin-left: 2px;
+                margin-top: 2px;
+            }
 
-.square:hover{
-    background-color: rgb(249, 80, 1);
-    cursor: pointer;
-}
+            .square:hover{
+                background-color: rgb(249, 80, 1);
+                cursor: pointer;
+            }
 
-.winner{
-    padding: 12px;
-    color: firebrick;
-}
+            .winner{
+                padding: 10px;
+                color: rgb(39, 235, 21);
+                font-size: 25px;
+            }
     </style>
 </head>
 <body id="backgroundHW">
    
         <div class="board-container flex-container flex-column flex-center">
             <div class="flex-container">
-                <!-- <img src="Puzzle.png" alt="loc" width="75" height="75"> -->
                 <div  class="title">Tic Tac Toe</div>
             </div>
             
