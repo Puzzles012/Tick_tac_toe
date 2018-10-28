@@ -1,7 +1,8 @@
-html,
+/*html,
 body{
     height:100%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
 }
 
 .flex-container{
@@ -50,22 +51,10 @@ body{
     background-color: #fff;
     cursor: pointer;
 }
-
-.winner{
-    display: none;
-    padding: 12px;
-    font-size: 30px;
-    color: firebrick;
-}
-
-
-
-/*.reset{
-    padding: 5px;
-    margin: 0px;
-    margin-bottom: 10px;
-}
 */
+
+
+
 
 
 
