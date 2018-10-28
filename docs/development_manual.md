@@ -10,10 +10,10 @@ The main programs that were used was *[Jest](https://jestjs.io/)* as a test envi
 ## Programing languages ##
 Mainly is *Tic-Tac-Toe* build on *JavaScript*, the look of the game is achieved with *HTML* and *CSS*. 
 
-> ### Jest ###
+> ## Jest ##
 > Jest is a testing platform for node.js building environment that, with npm allows us to use TDD (Test Driven Development) method to develop and run automated test builder (WatchAll) and/or test single tests.  
 
-> ### Npm ###
+> ## Npm ##
 > Npm is an automated build and dependency tool that is used to help developers run with dependency programs without needing to create them on their own. It was the build tool that was utilized for developing the system. Furthermore npm was used to run the tests with Jest witch was described above. It was also npm that was used  to install all the Webpacks that were utilized. 
 
 >## Webpack ##
@@ -22,7 +22,7 @@ Mainly is *Tic-Tac-Toe* build on *JavaScript*, the look of the game is achieved 
 > ## Heroku ##
 > Heroku is Automated Continuous Integration Server that maintains that server of web program is running and is maintained correctly. It was used to deploy Tic-Tac-Toe to the server and maintain it in secured environment. 
 
-> ### CircleCI ###
+> ## CircleCI ##
 > CircleCI maintains Continuous delivery of the server and see if the progress of the program is running correctly.
 - - -
 ## Conclusion ##
