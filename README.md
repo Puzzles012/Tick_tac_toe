@@ -15,7 +15,8 @@
 
 ## Instructor ##
 - Hannes Pétursson
-
+### TAs ###
+- Skúli Arnlaugsson
 
 - - -
 
@@ -31,7 +32,7 @@ The game covers the basic features.
 - [Design report](https://github.com/Puzzles012/Tick_tac_toe/blob/master/docs/design_report.md)
 - [Developement manual](https://github.com/Puzzles012/Tick_tac_toe/blob/master/docs/development_manual.md)
 ## Things done in the project according to project description ##
- [/] Work in progress
+- [/] Work in progress
 - [x] Work completed 
 - [ ] Work unfinished
 
