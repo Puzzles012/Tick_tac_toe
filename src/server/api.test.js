@@ -1,5 +1,6 @@
 const request = require("supertest");
 const api = require("./api");
+let browser;
 
 describe("GET /tic tac toe/:player endpoint", () => {  
     it("should return a 200 OK status code", async () => {    
@@ -8,6 +9,10 @@ describe("GET /tic tac toe/:player endpoint", () => {
     });  
     it("should return the gameboard", async () => {
         const res = await request(api).get("/ttt/o");    
-        expect(res.body.game).toBe("it's x turn");  
     });
+
+    it("should display index", async () => {
+        const res = await request(api).get("/dist/index");
+    });
+    
 });

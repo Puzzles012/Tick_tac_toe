@@ -1,27 +1,19 @@
 exports.playerTurn = function playerTurn(curPlayer){
-	if(curPlayer != "x" && curPlayer != "o"){
-		return "x and o only"
-	}
-	if(curPlayer == "x"){
-        curPlayer = "o";
+
+	if(curPlayer == "X"){
+        curPlayer = "O";
     }
     else{
-        curPlayer = "x"
+        curPlayer = "X"
     }
-    return "it's " + curPlayer + " turn";;
+    return curPlayer;
 }
+
 exports.initializeBoard = function initializeBoard(){
 	var array = [];
-
-	/*
-	the default value for each square is ., if 
-	player 1 or 2 pick the square the value turns 
-	to X or O, respectively
-	 */
 	for(var i = 0; i < 9; i++){
 		array[i] = '.';
 	} 
-
 	return array;
 }
 
@@ -30,30 +22,33 @@ exports.displayBoard = function displayBoard(){
 	for(var i = 0; i < board.length; i++){
 		if(i % 3 == 0){
 			console.log();
-			process.stdout.write(board[i] + " ");
+			console.log(board[i]);
+			//document.write(board[i] + " ");
 		}else{
-			process.stdout.write(board[i] + " ");
+			//document.write(board[i] + " ");
+			console.log(board[i]);
 		}
 	}
 
 	console.log("\n");
 }
 
-exports.pickSquare = function pickSquare(squareNumber, playerNumber){
-	if(board[squareNumber - 1] == '.'){
-		if(playerNumber == 1){
-			board[squareNumber - 1] = 'X';
+exports.pickSquare = function pickSquare(squareNumber, player){
+	if(board[squareNumber] == '.'){
+		if(player == 'X'){
+			board[squareNumber] = 'X';
 		}
 
-		if(playerNumber == 2){
-			board[squareNumber - 1] = 'O';
+		if(player == 'O'){
+			board[squareNumber] = 'O';
 		}
 	}
 
-	return board;
+	return player;
 }
 
 exports.checkWinner = function checkWinner(){
+
 	var winner = null;
 
 	for(var i = 0; i < 3; i++){
@@ -77,19 +72,29 @@ exports.checkWinner = function checkWinner(){
 	}
 
 	return winner;
+
+}
+
+function readStdInput(){
+	var input = readline.createInterface({
+		input: process.stdin,
+		output: process.stdout
+	});
+
+	return input.question("bleh", function(answer){
+		input.close();
+	});
 }
 
 const board = exports.initializeBoard();
+
 const maxTurns = 9;
+
 /*
-exports.playerTurn();
-
-exports.displayBoard();
-exports.pickSquare(3, 2);
-exports.pickSquare(5, 2);
-exports.pickSquare(7, 2);
-exports.displayBoard();
-exports.displayBoard();
-
-console.log(exports.checkWinner());*/
-
+module.exports.displayBoard();
+module.exports.pickSquare(3, 2);
+module.exports.pickSquare(5, 2);
+module.exports.pickSquare(7, 2);
+module.exports.displayBoard();
+module.exports.displayBoard();
+*/
