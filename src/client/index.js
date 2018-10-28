@@ -31,14 +31,11 @@ function addToBoard(b){
         }
         else{
             player = logic.playerTurn(player);
+            document.getElementById("player").innerHTML = player;
         }
 
     }
     
-}
-
-function writeToboard(cid){
-    document.getElementById(cid).innerHTML = player;
 }
 
 function resetFunc(){  
