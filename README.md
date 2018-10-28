@@ -60,31 +60,4 @@ End-to-end tests.
 Deploy to production server.
 Only continue next step if previous step is success
 Generate feedback to developer
-# Grade
-Solving parts 1-10 perfectly will together give a grade of 6, it's OK to have all targets in build script
-manual. Next parts need to be solved incrementally, e.g. finish part 11 before starting with part 12.
-Continuous Delivery is mandatory to get 10. We expect participation from each team member in the
-git history. If you are pairing please switch drivers regularly (and user on git).
-Return form 
 
-[ ] 1. URL of root of the project in the source control system. If the repo is private you need to share
-it with the user hap2000.
-
-[ ] 2. Documentation. The following report should all be stored in a folder called docs in the root of
-the repository.
-
-Development manual: what is needed and how to get the project to build on a fresh
-machine, Source control client and access to source control Build environment, Other
-necessary dependencies for development.
-
-Administration manual: How to set it up and get it to run, also on a fresh machine. How
-to install and run the program on clients machine (in case of simple desktop program).
-How to deploy, run and maintain in case of client/server or web application.
-
-Design report: Document describing the initial design.
-# Demonstration
-The team will have a 15 minutes demonstration of the technical infrastructure and the simple
-functionality developed. The demonstrations will be held in the last week, the detailed schedule will
-be published later. The distributed groups will demonstrate using shared desktop. The
-demonstration is part of the grade for this assignment. If you are not able to show some part of the
-build process (if it is broken) in the demonstration it will not count in the grade.
