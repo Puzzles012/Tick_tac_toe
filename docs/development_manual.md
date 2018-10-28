@@ -28,4 +28,4 @@ Mainly is *Tic-Tac-Toe* build on *JavaScript*, the look of the game is achieved 
 ## Conclusion ##
 Without most of these programs, it would not run as it does now. It keeps the project alive and with any future changes, makes the environment work from where it is.
 
-[^1]: Webpack/concepts https://webpack.js.org/concepts/
+[^1]: Webpack/concepts [ref]: https://webpack.js.org/concepts/
