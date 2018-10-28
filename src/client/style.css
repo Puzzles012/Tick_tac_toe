@@ -47,14 +47,12 @@ body{
 }
 
 .square:hover{
-    background-color: #fff;
+    background-color: rgb(249, 80, 1);
     cursor: pointer;
 }
 
 .winner{
-    display: none;
     padding: 12px;
-    font-size: 30px;
     color: firebrick;
 }
 

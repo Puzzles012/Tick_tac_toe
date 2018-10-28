@@ -1,14 +1,14 @@
 exports.playerTurn = function playerTurn(curPlayer){
 
-	if(curPlayer == "X"){
-        curPlayer = "O";
+	if(curPlayer == 'X'){
+        curPlayer = 'O';
     }
     else{
-        curPlayer = "X"
+        curPlayer = 'X'
     }
     return curPlayer;
 }
-
+//get the board in the beginning
 exports.initializeBoard = function initializeBoard(){
 	var array = [];
 	for(var i = 0; i < 9; i++){
@@ -32,7 +32,7 @@ exports.displayBoard = function displayBoard(){
 
 	console.log("\n");
 }
-
+//picks the value to put in the array
 exports.pickSquare = function pickSquare(squareNumber, player){
 	if(board[squareNumber] == '.'){
 		if(player == 'X'){
@@ -46,7 +46,7 @@ exports.pickSquare = function pickSquare(squareNumber, player){
 
 	return player;
 }
-
+//checks winner
 exports.checkWinner = function checkWinner(){
 
 	var winner = null;
@@ -85,16 +85,13 @@ function readStdInput(){
 		input.close();
 	});
 }
+//reset func
+exports.reset = function reset(){
+	board = exports.initializeBoard();
+}
 
-const board = exports.initializeBoard();
-
+//the board
+let board = exports.initializeBoard();
+//max turns available
 const maxTurns = 9;
 
-/*
-module.exports.displayBoard();
-module.exports.pickSquare(3, 2);
-module.exports.pickSquare(5, 2);
-module.exports.pickSquare(7, 2);
-module.exports.displayBoard();
-module.exports.displayBoard();
-*/
