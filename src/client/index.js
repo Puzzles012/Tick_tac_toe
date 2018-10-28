@@ -64,6 +64,8 @@ function resetFunc(){
     totalturns = 0;
     var res = document.getElementsByClassName('winner')[0];
     res.innerHTML = "";
+    var resTurn = document.getElementById('player');
+    resTurn.innerHTML = 'X';
     winner = null;
 }
 //calls to checkwinner function in logic/ttt
