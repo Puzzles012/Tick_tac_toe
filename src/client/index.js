@@ -72,3 +72,5 @@ function resetFunc(){
 function checkWinner(){
     return logic.checkWinner();
 }
+
+console.log("hello");
